@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<nav class="navbar navbar-expand-lg bg-light bg-opacity-75">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Slang Panameño</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="agregar_palabra">Agregar Palabra</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="editar_palabra">Editar Palabra</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="eliminar_palabra">Borrar Palabra</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<body style="background: #085078;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #85D8CE, #085078);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #85D8CE, #085078); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+    <h1 style="position: relative; top: 25px; color: aliceblue; text-align: center;">Diccionario Panameño</h1>
+    <br>
+    <div class="container text-center">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row">
+          <div class="col-md-8">
+            <table class="table table-striped table-bordered table-dark">
+                <tr>
+                    <th style="color:aliceblue">Palabra</th>
+                    <th style="color:aliceblue">Significado</th>
+                </tr>
+                {% for palabra in palabras %}
+                <tr class="palabras">
+                    <td style="color:aliceblue"> {{palabra["nombre"]}}</td>
+                
+                    <td style="color:aliceblue"> {{palabra["significado"]}}</td>
+                    {% endfor %}
+                </tr>
+                </table>  
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-grid gap-2">
+                <a class="btn btn-primary" href="agregar_palabra" role="button">Agregar Palabra</a>
+                <a class="btn btn-success" href="editar_palabra" role="button">Editar Palabra</a>
+                <a class="btn btn-danger" href="eliminar_palabra" role="button">Borrar Palabra</a>              
+            </div>
+          </div>
+        </div>
+
+    
+                    
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>
